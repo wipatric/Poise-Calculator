@@ -19,9 +19,10 @@ struct set
 	armor* leg;
 	double weight_total;
 	double poise_total;
-}
+};
 
 void read_store(vector<armor>* output, string input);
+void gen_sets(vector<armor>* chest, vector<armor>* head, vector<armor>* hand, vector<armor>* leg, vector<set>* sets);
 void print_armor(vector<armor>* input);
 
 int main()
@@ -50,6 +51,11 @@ void read_store(vector<armor>* output, string input)
 		output->push_back(chestpiece);
 	}
 	
+}
+
+void gen_sets(vector<armor>* chest, vector<armor>* head, vector<armor>* hand, vector<armor>* leg, vector<set>* sets)
+{
+	return;
 }
 
 void print_armor(vector<armor>* input)
