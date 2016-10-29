@@ -23,7 +23,8 @@ struct set
 
 void read_store(vector<armor>* output, string input);
 void gen_sets(vector<armor>* chest, vector<armor>* head, vector<armor>* hand, vector<armor>* leg, vector<set>* sets);
-void print_armor(vector<armor>* input);
+void print_armor(armor* input);
+void print_set(set* input);
 
 int main()
 {
@@ -36,7 +37,6 @@ int main()
 	read_store(&head, "Head.txt");
 	read_store(&hand, "Hand.txt");
 	read_store(&leg, "Leg.txt");
-	print_armor(&chest);
 }
 
 void read_store(vector<armor>* output, string input)
@@ -58,11 +58,19 @@ void gen_sets(vector<armor>* chest, vector<armor>* head, vector<armor>* hand, ve
 	return;
 }
 
-void print_armor(vector<armor>* input)
+void print_armor(armor* input)
 {
-	for(int i=0; i<input->size(); i++)
-	{
-		cout << "w=" << input->at(i).weight << " p=" << input->at(i).poise << endl;
-	}
-	return;
+		cout << "w=" << input->weight << " p=" << input->poise << endl;
+}
+
+void print_set(set* input)
+{
+	cout << "head" << endl;
+	print_armor(input->head);
+	cout << "chest" << endl;
+	print_armor(input->chest);
+	cout << "leg" << endl;
+	print_armor(input->leg);
+	cout << "hand" << endl;
+	print_armor(input->hand);
 }
