@@ -11,6 +11,16 @@ struct armor
 	double poise;
 };
 
+struct set
+{
+	armor* chest;
+	armor* head;
+	armor* hand;
+	armor* leg;
+	double weight_total;
+	double poise_total;
+}
+
 void read_store(vector<armor>* output, string input);
 void print_armor(vector<armor>* input);
 
