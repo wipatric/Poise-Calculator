@@ -25,6 +25,7 @@ void read_store(vector<armor>* output, string input);
 void gen_sets(vector<armor>* chest, vector<armor>* head, vector<armor>* hand, vector<armor>* leg, vector<set>* sets);
 void print_armor(armor* input);
 void print_set(set* input);
+void print_all(vector<set>* input);
 
 int main()
 {
@@ -40,6 +41,7 @@ int main()
 	
 	vector <set> sets;
 	gen_sets(&chest, &head, &hand, &leg, &sets);
+	print_all(&sets);
 }
 
 void read_store(vector<armor>* output, string input)
@@ -88,12 +90,21 @@ void print_armor(armor* input)
 
 void print_set(set* input)
 {
-	cout << "head" << endl;
+	cout << "head  -- ";
 	print_armor(input->head);
-	cout << "chest" << endl;
+	cout << "chest -- ";
 	print_armor(input->chest);
-	cout << "leg" << endl;
+	cout << "leg   -- ";
 	print_armor(input->leg);
-	cout << "hand" << endl;
+	cout << "hand  -- ";
 	print_armor(input->hand);
+}
+
+void print_all(vector<set>* input)
+{
+	for(int i = 0; i< input->size(); ++i)
+	{
+		cout << "set " << i << endl;
+		print_set(&input->at(i));
+	}
 }
