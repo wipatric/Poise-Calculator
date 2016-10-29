@@ -90,6 +90,8 @@ void print_armor(armor* input)
 
 void print_set(set* input)
 {
+	cout << "weight: " << input->weight_total << endl;
+	cout << "poise: " << input->poise_total << endl;
 	cout << "head  -- ";
 	print_armor(input->head);
 	cout << "chest -- ";
@@ -104,7 +106,9 @@ void print_all(vector<set>* input)
 {
 	for(int i = 0; i< input->size(); ++i)
 	{
+		cout << "----------------------------" << endl;
 		cout << "set " << i << endl;
+		cout << "----------------------------" << endl;
 		print_set(&input->at(i));
 	}
 }
